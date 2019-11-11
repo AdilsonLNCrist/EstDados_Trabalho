@@ -24,10 +24,13 @@ typedef struct cad {
        no *segundo;
        no *primeiro;
        no *ultimo;
+       no *auxiliar;
+       char nomedado[40];
 
        void listar();
        void excluir_ultimo_registro();
        void excluir_primeiro_registro();
+       void excluir_determinado_registro();
 
 main(){
        printf("\n CURSO: SUPERIOR DE TECNOLOGIA EM ANALISE E DESENVOLVIMENTO DE SISTEMAS");
@@ -41,6 +44,7 @@ main(){
        inicio = (no *)malloc(sizeof(no));
        ultimo = (no *)malloc(sizeof(no));
        primeiro = (no *)malloc(sizeof(no));
+       auxiliar = (no *)malloc(sizeof(no));
        if (inicio == NULL)
                      exit(1);
        proximo = inicio;              
@@ -82,7 +86,7 @@ main(){
                          excluir_primeiro_registro();
                     break;
                     case 3:
-                         //excluir_determinado_registro();
+                         excluir_determinado_registro();
                     break;
                     case 4:
                          //inserir_registro_inicio();
@@ -139,4 +143,57 @@ void excluir_primeiro_registro(){//Case 2
 	printf("\nPRIMEIRO REGISTRO DA LISTA EXCLUIDO ");
 	printf("\n\nUse qualquer tecla para iniciar");
     getch();
+}
+void excluir_determinado_registro(){
+	system("cls");
+	printf("informe o nome completo registro que deseja excluir:");
+	scanf("%s",&nomedado);
+	proximo = inicio;
+//	printf("%s\n",nomedado);
+//	printf("%s\n",proximo->nome);
+/*
+	 while(proximo->prox != NULL){ //(proximo->prox != NULL)
+		//printf("%s", proximo->nome);
+		
+		penultimo = proximo;
+		if(strcmp(proximo->nome,nomedado) == 0){ //(proximo-> != nomedado)
+			printf("\n");
+			penultimo->prox = proximo->prox;
+		}
+
+		else{
+			//printf("Nao tem");
+			printf("%s\n",proximo->nome);
+		}
+		proximo = proximo->prox;
+		
+	}
+	*/
+	
+	
+	/*
+	proximo = inicio;
+	while(proximo->prox != NULL){
+		penultimo = proximo;
+		proximo = proximo->prox;
+		if(proximo->nome == nomedado){
+			penultimo->prox = proximo;
+		}
+	}
+	penultimo->prox = NULL;
+	proximo = penultimo;
+	free(penultimo);*/
+	while(proximo->prox != NULL){
+		auxiliar = NULL;
+		if 
+		if(strcmp(proximo->nome,nomedado) == 0){ // comparacao stringa
+			printf("\n");
+		}
+		else{
+			printf("%s\n",proximo->nome);
+		}
+		proximo = proximo->prox;
+		penultimo = proximo;
+	}
+	getch();
 }
