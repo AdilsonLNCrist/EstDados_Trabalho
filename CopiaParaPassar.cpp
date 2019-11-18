@@ -1,6 +1,6 @@
 //Programa estruturado para o trabalho final do semestre, que le dados de um arquivo
 //e coloca em uma lista encadeada para ser incrementado com as funcionalidades solicitadas
-//no enunciado do arquivo da avaliação N2.
+//no enunciado do arquivo da avaliaÃ§Ã£o N2.
 
 #include<stdio.h >
 #include<stdlib.h>
@@ -110,7 +110,7 @@ main(){
        fclose(arquivo_cadastro);
 }
 
-//Função para apresentar a lista
+//FunÃ§Ã£o para apresentar a lista
 void listar(){
      printf("\n ESTADO ATUAL DA LISTA\n");
      proximo = inicio;      
